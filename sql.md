@@ -4,9 +4,9 @@
 Для этого: выведи список логинов курьеров с количеством их заказов в статусе «В доставке» (поле inDelivery = true).
 
 SELECT c.login,
-    COUNT(*) AS "deliveryCount"
+    COUNT(o.id) AS "deliveryCount"
 FROM "Couriers" AS c
-    INNER JOIN "Orders" AS o ON c.id = o."courierId"
+    LEFT JOIN "Orders" AS o ON c.id = o."courierId"
 GROUP BY c.login;
 
 
