@@ -6,7 +6,7 @@
 SELECT c.login,
     COUNT(*) AS "deliveryCount"
 FROM "Couriers" AS c
-    LEFT JOIN "Orders" AS o ON c.id = o."courierId"
+    INNER JOIN "Orders" AS o ON c.id = o."courierId"
 GROUP BY c.login;
 
 
